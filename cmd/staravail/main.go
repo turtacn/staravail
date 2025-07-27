@@ -6,25 +6,18 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
-	"path/filepath"
-	"runtime"
 	"syscall"
 	"time"
 
 	"go.uber.org/zap"
 
-	"github.com/turtacn/staravail/internal/application/services"
-	"github.com/turtacn/staravail/internal/client"
 	"github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/common/version"
 	"github.com/turtacn/staravail/internal/core/engine"
 	"github.com/turtacn/staravail/internal/core/proxy"
-	"github.com/turtacn/staravail/internal/core/service"
 	"github.com/turtacn/staravail/internal/infrastructure/config"
-	"github.com/turtacn/staravail/internal/interfaces/http"
-	"github.com/turtacn/staravail/internal/interfaces/mysql"
-	"github.com/turtacn/staravail/internal/security"
+	"github.com/turtacn/staravail/internal/interfaces/http/router"
+	"github.com/turtacn/staravail/internal/interfaces/mysql/server"
 )
 
 // Command line flags

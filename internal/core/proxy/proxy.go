@@ -19,8 +19,6 @@ import (
 	"github.com/turtacn/staravail/internal/common/metrics"
 	"github.com/turtacn/staravail/internal/domain/health"
 	"github.com/turtacn/staravail/internal/infrastructure/config"
-	"github.com/turtacn/staravail/internal/interfaces/api"
-	"github.com/turtacn/staravail/internal/interfaces/mysql"
 )
 
 // ProxyStatus represents the status of the proxy.

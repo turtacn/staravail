@@ -7,11 +7,12 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	"github.com/turtacn/staravail/internal/infrastructure/config"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/message"
 )
+
 
 // BatchAggregator defines the interface for aggregating messages into batches
 type BatchAggregator interface {

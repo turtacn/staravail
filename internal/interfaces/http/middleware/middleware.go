@@ -21,13 +21,9 @@ import (
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"
 
-	"github.com/turtacn/staravail/internal/common/auth"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/constants"
-	"github.com/turtacn/staravail/internal/common/logging"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/common/security"
-	"github.com/turtacn/staravail/internal/common/util"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // contextKey is a custom type for context keys to avoid collisions.

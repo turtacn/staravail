@@ -12,10 +12,10 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/avro"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	"github.com/turtacn/staravail/internal/adapters/avro"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/message"
 )
 
 // MessageFormat represents the format of a message

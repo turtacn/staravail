@@ -17,9 +17,10 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // QueryResult represents the result of a query execution

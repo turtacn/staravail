@@ -4,10 +4,6 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/fsnotify/fsnotify"
-	"github.com/spf13/pflag"
-	"github.com/spf13/viper"
-	"github.com/turtacn/staravail/internal/common/logger"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -15,6 +11,12 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/fsnotify/fsnotify"
+	"github.com/spf13/pflag"
+	"github.com/spf13/viper"
+
+	"github.com/turtacn/staravail/internal/common/logger"
 )
 
 var (

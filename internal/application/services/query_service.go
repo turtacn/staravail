@@ -7,19 +7,17 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	clients "github.com/turtacn/staravail/internal/infrastructure/starrocks"
 	"math/rand" // For fallback random number generation
 	"strings"
 	"sync"
 	"time"
 
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/turtacn/staravail/internal/common/logging"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/config"
-	"github.com/turtacn/staravail/internal/domain"
-	"github.com/turtacn/staravail/internal/infrastructure/clients"
-	"github.com/turtacn/staravail/internal/infrastructure/health"
-	"github.com/turtacn/staravail/internal/query"
+	"github.com/turtacn/staravail/internal/domain/health"
+	"github.com/turtacn/staravail/internal/domain/query"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // QueryResultFormat represents the format of query results

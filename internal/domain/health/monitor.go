@@ -8,13 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/turtacn/staravail/internal/common/config"
 	"github.com/turtacn/staravail/internal/common/errors"
-	"github.com/turtacn/staravail/internal/common/events"
-	"github.com/turtacn/staravail/internal/common/logging"
+	"github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/domain/client"
 	"github.com/turtacn/staravail/internal/domain/tablet"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // HealthState represents the overall health state of the StarRocks cluster

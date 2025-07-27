@@ -17,13 +17,11 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/turtacn/staravail/internal/application/interfaces"
-	"github.com/turtacn/staravail/internal/common/auth"
 	"github.com/turtacn/staravail/internal/common/constants"
 	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/domain/admin"
-	"github.com/turtacn/staravail/internal/common/types/model"
 )
+
 
 // ConfigUpdateRequest represents a request to update configuration.
 type ConfigUpdateRequest struct {

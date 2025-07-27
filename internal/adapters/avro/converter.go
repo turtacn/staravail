@@ -15,10 +15,11 @@ import (
 
 	"github.com/linkedin/goavro/v2"
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	"github.com/turtacn/staravail/internal/adapters/schema"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/common/schema"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // FormatType represents the type of Avro format

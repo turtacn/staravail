@@ -8,8 +8,7 @@ import (
 	"time"
 
 	"github.com/turtacn/staravail/internal/common/errors"
-	"github.com/turtacn/staravail/internal/common/events"
-	"github.com/turtacn/staravail/internal/common/logging"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
 )
 

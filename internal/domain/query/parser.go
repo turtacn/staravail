@@ -11,11 +11,11 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
-	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/domain/metadata"
 	"github.com/xwb1989/sqlparser"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
+	"github.com/turtacn/staravail/internal/common/metrics"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // QueryType represents the type of SQL query

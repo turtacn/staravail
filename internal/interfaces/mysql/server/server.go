@@ -13,21 +13,18 @@ import (
 	"time"
 
 	"github.com/go-sql-driver/mysql"
-	"github.com/pingcap/parser"
-	"github.com/pingcap/parser/ast"
-	_ "github.com/pingcap/tidb/types/parser_driver"
 	"go.uber.org/zap"
 
 	"github.com/turtacn/staravail/internal/application/interfaces"
-	"github.com/turtacn/staravail/internal/common/auth"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/domain/models"
+	- "github.com/turtacn/staravail/internal/common/types/model"
 	"github.com/turtacn/staravail/internal/domain/query"
 	"github.com/turtacn/staravail/internal/domain/write"
 	"github.com/turtacn/staravail/internal/interfaces/mysql/protocol"
 )
+
 
 // MySQLServer defines the interface for a MySQL protocol server.
 type MySQLServer interface {

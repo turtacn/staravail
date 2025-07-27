@@ -18,9 +18,10 @@ import (
 
 	"github.com/cenkalti/backoff/v4"
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // BackendInfo represents the status information of a BE node

@@ -10,11 +10,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/turtacn/staravail/internal/client"
-	"github.com/turtacn/staravail/internal/common/logging"
-	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/common/utils"
 	"go.uber.org/zap"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
+	"github.com/turtacn/staravail/internal/common/metrics"
+	client "github.com/turtacn/staravail/internal/infrastructure/starrocks"
 )
 
 // ExecutorStatus represents the current status of an executor.

@@ -13,9 +13,10 @@ import (
 
 	"github.com/linkedin/goavro/v2"
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // BinaryReader defines the interface for reading Avro Binary format

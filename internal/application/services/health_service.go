@@ -10,12 +10,12 @@ import (
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/config"
-	"github.com/turtacn/staravail/internal/domain/entities"
-	"github.com/turtacn/staravail/internal/infrastructure/health"
-	"github.com/turtacn/staravail/internal/tablet"
+	"github.com/turtacn/staravail/internal/domain/health"
+	"github.com/turtacn/staravail/internal/domain/tablet"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // HealthLevel represents the severity level of a health status

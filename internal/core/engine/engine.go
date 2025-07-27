@@ -13,13 +13,13 @@ import (
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/turtacn/staravail/internal/application/services"
-	"github.com/turtacn/staravail/internal/common/logger"
-	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/core/health"
-	"github.com/turtacn/staravail/internal/infrastructure/config"
 	"go.uber.org/zap"
 	"golang.org/x/sync/semaphore"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
+	"github.com/turtacn/staravail/internal/common/metrics"
+	"github.com/turtacn/staravail/internal/domain/health"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // ExecutionStrategy defines different strategies for query execution.

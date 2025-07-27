@@ -10,12 +10,11 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/client"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	"github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/message"
-	"github.com/turtacn/staravail/internal/model"
+	"github.com/turtacn/staravail/internal/common/types/model"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // BatchProcessingStatus represents the current status of batch processing

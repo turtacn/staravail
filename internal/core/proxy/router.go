@@ -5,19 +5,20 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/turtacn/staravail/internal/common/cache"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
-	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/core/health"
-	"github.com/turtacn/staravail/internal/service/query"
-	"github.com/turtacn/staravail/internal/service/write"
-	"go.uber.org/zap"
 	"hash/fnv"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/prometheus/client_golang/prometheus"
+	"go.uber.org/zap"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
+	"github.com/turtacn/staravail/internal/common/metrics"
+	"github.com/turtacn/staravail/internal/domain/health"
+	"github.com/turtacn/staravail/internal/domain/query"
+	"github.com/turtacn/staravail/internal/domain/write"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // RoutingStrategy defines the routing strategy to use.

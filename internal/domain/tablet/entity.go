@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/turtacn/staravail/internal/common/model"
+	"github.com/turtacn/staravail/internal/common/types/model"
 )
 
 // TabletState represents the state of a tablet

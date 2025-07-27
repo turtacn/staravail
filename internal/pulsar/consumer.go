@@ -10,10 +10,11 @@ import (
 
 	"github.com/apache/pulsar-client-go/pulsar"
 	"github.com/pkg/errors"
-	"github.com/turtacn/staravail/internal/common/config"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	"github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/message"
+	"github.com/turtacn/staravail/internal/common/types/model"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 
 // ConsumerState represents the current state of a consumer

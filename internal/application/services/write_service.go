@@ -12,15 +12,16 @@ import (
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/turtacn/staravail/internal/common/logging"
+
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/config"
-	"github.com/turtacn/staravail/internal/domain"
-	"github.com/turtacn/staravail/internal/infrastructure/clients"
-	"github.com/turtacn/staravail/internal/infrastructure/health"
-	"github.com/turtacn/staravail/internal/tablet"
-	"github.com/turtacn/staravail/internal/write"
+	"github.com/turtacn/staravail/internal/infrastructure/config"
+	clients "github.com/turtacn/staravail/internal/infrastructure/starrocks"
+	"github.com/turtacn/staravail/internal/domain/health"
+	"github.com/turtacn/staravail/internal/domain/tablet"
+	"github.com/turtacn/staravail/internal/domain/write"
 )
+
 
 // WriteOperation represents the type of write operation
 type WriteOperation string

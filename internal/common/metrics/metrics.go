@@ -17,7 +17,7 @@ import (
 	"go.opentelemetry.io/otel/sdk/metric"
 	"go.uber.org/zap"
 
-	"github.com/turtacn/staravail/internal/common/logger"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/infrastructure/config"
 )
 

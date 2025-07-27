@@ -16,10 +16,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/turtacn/staravail/internal/common/logging"
-	"github.com/turtacn/staravail/internal/domain/models"
+	"github.com/turtacn/staravail/internal/common/logger"
+	"github.com/turtacn/staravail/internal/common/types/model"
 	"github.com/turtacn/staravail/internal/domain/query"
-)
 
 // MySQL protocol constants
 const (

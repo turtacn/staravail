@@ -18,11 +18,9 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/turtacn/staravail/internal/application/interfaces"
-	"github.com/turtacn/staravail/internal/common/auth"
 	"github.com/turtacn/staravail/internal/common/constants"
-	"github.com/turtacn/staravail/internal/common/logging"
+	logging "github.com/turtacn/staravail/internal/common/logger"
 	"github.com/turtacn/staravail/internal/common/metrics"
-	"github.com/turtacn/staravail/internal/domain/models"
 	"github.com/turtacn/staravail/internal/domain/query"
 )
 
