@@ -108,7 +108,7 @@ sequenceDiagram
 #### 2. 数据摄入引擎架构
 
 ```mermaid
-graph LR
+graph TD
     %% 输入层
     subgraph IL[输入层（Input Layer）]
         A1[Pulsar消费者（Pulsar Consumer）]
@@ -155,7 +155,7 @@ graph LR
 | Avro处理   | linkedin/goavro           | v2.12.0 | Avro编解码支持                    |
 | Schema注册 | srclient                  | v0.6.0  | Confluent Schema Registry客户端 |
 | 缓存       | go-redis/redis            | v9.0.5  | 分布式缓存支持                      |
-| 监控       | prometheus/client\_golang | v1.16.0 | 指标收集与暴露                      |
+| 监控       | prometheus/client_golang | v1.16.0 | 指标收集与暴露                      |
 | 日志       | sirupsen/logrus           | v1.9.3  | 结构化日志记录                      |
 | 配置管理     | spf13/viper               | v1.16.0 | 配置文件处理                       |
 
@@ -306,12 +306,12 @@ sequenceDiagram
 
 | 指标类型  | 指标名称                  | 含义           | 阈值      |
 | ----- | --------------------- | ------------ | ------- |
-| 可用性指标 | tablet\_health\_ratio | 健康Tablet比例   | > 85%   |
-| 性能指标  | query\_latency\_p99   | 查询延迟P99      | < 200ms |
-| 吞吐指标  | ingestion\_eps        | 数据摄入EPS      | > 10000 |
-| 错误指标  | error\_rate           | 错误率          | < 1%    |
-| 资源指标  | memory\_usage         | 内存使用率        | < 80%   |
-| 业务指标  | compaction\_score     | Compaction分数 | < 100   |
+| 可用性指标 | tablet_health_ratio | 健康Tablet比例   | > 85%   |
+| 性能指标  | query_latency_p99   | 查询延迟P99      | < 200ms |
+| 吞吐指标  | ingestion_eps        | 数据摄入EPS      | > 10000 |
+| 错误指标  | error_rate           | 错误率          | < 1%    |
+| 资源指标  | memory_usage         | 内存使用率        | < 80%   |
+| 业务指标  | compaction_score     | Compaction分数 | < 100   |
 
 #### 2. 日志体系设计
 
@@ -357,27 +357,22 @@ staravail/
 │   ├── app/                     # 应用层
 │   │   ├── query/               # 查询应用服
 │   │   │   ├── service.go          # 查询应用服务实现
-│   │   │   └── service_test.go     # 查询应用服务测试
 │   │   └── ingestion/              # 数据摄入应用服务
 │   │       ├── service.go          # 数据摄入应用服务实现
-│   │       └── service_test.go     # 数据摄入应用服务测试
 │   ├── core/                       # 核心业务逻辑层
 │   │   ├── domain/                 # 领域模型
 │   │   │   ├── query/              # 查询领域
 │   │   │   │   ├── models.go       # 查询相关模型
 │   │   │   │   ├── repository.go   # 查询仓储接口
 │   │   │   │   ├── service.go      # 查询领域服务
-│   │   │   │   └── service_test.go # 查询领域服务测试
 │   │   │   ├── tablet/             # Tablet管理领域
 │   │   │   │   ├── models.go       # Tablet模型
 │   │   │   │   ├── repository.go   # Tablet仓储接口
 │   │   │   │   ├── service.go      # Tablet领域服务
-│   │   │   │   └── service_test.go # Tablet领域服务测试
 │   │   │   └── ingestion/          # 数据摄入领域
 │   │   │       ├── models.go       # 摄入相关模型
 │   │   │       ├── repository.go   # 摄入仓储接口
 │   │   │       ├── service.go      # 摄入领域服务
-│   │   │       └── service_test.go # 摄入领域服务测试
 │   │   └── ports/                  # 端口定义（接口）
 │   │       ├── http.go             # HTTP端口接口
 │   │       ├── repository.go       # 仓储端口接口
@@ -385,28 +380,21 @@ staravail/
 │   ├── infrastructure/             # 基础设施层
 │   │   ├── cache/                  # 缓存实现
 │   │   │   ├── redis.go           # Redis缓存实现
-│   │   │   └── redis_test.go      # Redis缓存测试
 │   │   ├── database/              # 数据库实现
 │   │   │   ├── starrocks.go       # StarRocks客户端
-│   │   │   └── starrocks_test.go  # StarRocks客户端测试
 │   │   ├── messaging/             # 消息队列实现
 │   │   │   ├── pulsar.go          # Pulsar客户端
-│   │   │   └── pulsar_test.go     # Pulsar客户端测试
 │   │   ├── schema/                # Schema Registry实现
 │   │   │   ├── registry.go        # Schema Registry客户端
-│   │   │   └── registry_test.go   # Schema Registry测试
 │   │   └── monitoring/            # 监控实现
 │   │       ├── metrics.go         # 指标收集
-│   │       └── metrics_test.go    # 指标收集测试
+
 │   ├── interfaces/                # 接口适配器层
 │   │   ├── http/                  # HTTP接口实现
 │   │   │   ├── handlers/          # HTTP处理器
 │   │   │   │   ├── query.go       # 查询处理器
-│   │   │   │   ├── query_test.go  # 查询处理器测试
 │   │   │   │   ├── ingestion.go   # 摄入处理器
-│   │   │   │   ├── ingestion_test.go # 摄入处理器测试
 │   │   │   │   ├── health.go      # 健康检查处理器
-│   │   │   │   └── health_test.go # 健康检查测试
 │   │   │   ├── middleware/        # HTTP中间件
 │   │   │   │   ├── auth.go        # 认证中间件
 │   │   │   │   ├── cors.go        # CORS中间件
@@ -424,7 +412,6 @@ staravail/
 │   │   │   └── loader.go          # 配置加载器
 │   │   ├── logger/                # 日志管理
 │   │   │   ├── logger.go          # 日志接口和实现
-│   │   │   └── logger_test.go     # 日志测试
 │   │   ├── errors/                # 错误定义
 │   │   │   └── errors.go          # 统一错误定义
 │   │   ├── types/                 # 通用类型
@@ -447,49 +434,14 @@ staravail/
 ├── pkg/                          # 公共包，可对外暴露
 │   ├── client/                   # 客户端SDK
 │   │   ├── staravail.go         # StarAvail客户端
-│   │   └── staravail_test.go    # 客户端测试
 │   └── api/                      # API定义
 │       ├── v1/                   # API v1版本
 │       │   ├── query.go          # 查询API定义
 │       │   └── ingestion.go      # 摄入API定义
 │       └── types/                # API类型定义
 │           └── common.go         # 通用API类型
-├── configs/                      # 配置文件
-│   ├── config.yaml              # 默认配置
-│   ├── config-dev.yaml          # 开发环境配置
-│   ├── config-prod.yaml         # 生产环境配置
-│   └── docker-compose.yaml      # Docker Compose配置
-├── scripts/                      # 构建和部署脚本
-│   ├── build.sh                 # 构建脚本
-│   ├── deploy.sh                # 部署脚本
-│   └── test.sh                  # 测试脚本
-├── docs/                         # 文档
-│   ├── architecture.md          # 架构文档
-│   ├── api.md                   # API文档
-│   ├── deployment.md            # 部署文档
-│   └── development.md           # 开发文档
-├── test/                         # 测试文件
-│   ├── integration/             # 集成测试
-│   │   ├── query_test.go        # 查询集成测试
-│   │   └── ingestion_test.go    # 摄入集成测试
-│   ├── testdata/                # 测试数据
-│   │   ├── queries/             # 测试查询
-│   │   └── avro/                # 测试Avro文件
-│   └── mocks/                   # Mock对象
-│       ├── repository.go        # 仓储Mock
-│       └── client.go            # 客户端Mock
-├── deployments/                  # 部署配置
-│   ├── kubernetes/              # Kubernetes部署文件
-│   │   ├── deployment.yaml      # 部署配置
-│   │   ├── service.yaml         # 服务配置
-│   │   └── configmap.yaml       # 配置映射
-│   └── docker/                  # Docker配置
-│       └── Dockerfile           # Docker镜像构建文件
 ├── go.mod                       # Go模块定义
-├── go.sum                       # Go模块校验和
 ├── Makefile                     # 构建工具
-├── README.md                    # 项目说明（英文）
-├── README-zh.md                 # 项目说明（中文）
 ├── LICENSE                      # 许可证
 └── .gitignore                   # Git忽略文件
 ```
