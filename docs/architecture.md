@@ -316,7 +316,7 @@ sequenceDiagram
 #### 2. 日志体系设计
 
 ```mermaid
-graph LR
+graph TD
     %% 日志来源
     subgraph LS[日志来源（Log Sources）]
         A1[应用日志（App Logs）]
