@@ -69,10 +69,10 @@ graph TD
         SR_BE[StarRocks BE]
         RL[RoutineLoad 任务]
 
-        SR_FE -- "1. 创建/管理" --> RL
-        RL -- "2. 从 Kafka 消费数据" --> K
-        SR_FE -- "3. 调度导入计划" --> SR_BE
-        SR_BE -- "4. 执行数据导入" --> SR_BE
+        SR_FE -- "1.创建/管理" --> RL
+        RL -- "2.从 Kafka 消费数据" --> K
+        SR_FE -- "3.调度导入计划" --> SR_BE
+        SR_BE -- "4.执行数据导入" --> SR_BE
     end
 
     P -- "推送 Avro OCF 消息" --> PKB
@@ -109,15 +109,15 @@ sequenceDiagram
     participant P as Pulsar Broker
     participant K as Kafka Broker
 
-    PC ->> P: 1. 拉取消息
-    P -->> PC: 2. 返回 Avro OCF 消息
-    PC ->> T: 3. 递交消息进行转换
-    T -->> PC: 4. 返回 JSON 字符串
-    PC ->> KP: 5. 发送 JSON 消息
-    KP ->> K: 6. 异步/同步写入 Kafka
-    K -->> KP: 7. 返回写入成功确认
-    KP -->> PC: 8. 通知发送成功
-    PC ->> P: 9. **确认消费 (ACK)**
+    PC ->> P: 1.拉取消息
+    P -->> PC: 2.返回 Avro OCF 消息
+    PC ->> T: 3.递交消息进行转换
+    T -->> PC: 4.返回 JSON 字符串
+    PC ->> KP: 5.发送 JSON 消息
+    KP ->> K: 6.异步/同步写入 Kafka
+    K -->> KP: 7.返回写入成功确认
+    KP -->> PC: 8.通知发送成功
+    PC ->> P: 9.**确认消费 (ACK)**
 
 ```
 
